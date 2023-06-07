@@ -13,6 +13,8 @@
 		0F54BBF22A30011B00804B40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F54BBF12A30011B00804B40 /* Preview Assets.xcassets */; };
 		0F54BBF92A30016300804B40 /* RecipeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F54BBF82A30016200804B40 /* RecipeListView.swift */; };
 		0F54BBFE2A3002A700804B40 /* db.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 0F54BBFD2A3002A700804B40 /* db.sqlite */; };
+		0FE42B712A314EA0006E8EA0 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 0FE42B702A314EA0006E8EA0 /* Blackbird */; };
+		0FE42B732A314EC0006E8EA0 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE42B722A314EC0006E8EA0 /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,7 @@
 		0F54BBF82A30016200804B40 /* RecipeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListView.swift; sourceTree = "<group>"; };
 		0F54BBFD2A3002A700804B40 /* db.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite; sourceTree = "<group>"; };
 		0F54BBFF2A30038500804B40 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		0FE42B722A314EC0006E8EA0 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE42B712A314EA0006E8EA0 /* Blackbird in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +96,7 @@
 		0F54BBFC2A30019000804B40 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0FE42B722A314EC0006E8EA0 /* AppDatabase.swift */,
 				0F54BBFF2A30038500804B40 /* RecipeView.swift */,
 			);
 			path = Helpers;
@@ -113,6 +118,9 @@
 			dependencies = (
 			);
 			name = RecipeBook;
+			packageProductDependencies = (
+				0FE42B702A314EA0006E8EA0 /* Blackbird */,
+			);
 			productName = RecipeBook;
 			productReference = 0F54BBE72A30011900804B40 /* RecipeBook.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +149,9 @@
 				Base,
 			);
 			mainGroup = 0F54BBDE2A30011900804B40;
+			packageReferences = (
+				0FE42B6F2A314EA0006E8EA0 /* XCRemoteSwiftPackageReference "Blackbird" */,
+			);
 			productRefGroup = 0F54BBE82A30011900804B40 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,6 +181,7 @@
 			files = (
 				0F1819BE2A30EC8100FDC553 /* RecipeView.swift in Sources */,
 				0F54BBF92A30016300804B40 /* RecipeListView.swift in Sources */,
+				0FE42B732A314EC0006E8EA0 /* AppDatabase.swift in Sources */,
 				0F54BBEB2A30011900804B40 /* RecipeBookApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +381,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FE42B6F2A314EA0006E8EA0 /* XCRemoteSwiftPackageReference "Blackbird" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcoarment/Blackbird";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FE42B702A314EA0006E8EA0 /* Blackbird */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FE42B6F2A314EA0006E8EA0 /* XCRemoteSwiftPackageReference "Blackbird" */;
+			productName = Blackbird;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0F54BBDF2A30011900804B40 /* Project object */;
 }
