@@ -34,33 +34,37 @@ struct AddRecipeView: View {
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button(action: {
-                        Task {
-                            try await db!.transaction { core in
-                                try core.query("""
-                                              INSERT INTO recipe (
-                                              title,
-                                              steps,
-                                              ingredients
-                                              )
-                                              VALUES (
-                                              (?),
-                                              (?),
-                                              (?)
-                                              )
-                                              """,
-                                title,
-                                steps,
-                                ingredients)
-                            }
-                            title = ""
-                            steps = ""
-                            ingredients = ""
-                        }
+                        addRecipe()
                     }, label: {
                         Text("ADD")
                     })
                 }
             }
+        }
+    }
+    
+    func addRecipe() {
+        Task {
+            try await db!.transaction { core in
+                try core.query("""
+                              INSERT INTO recipe (
+                              title,
+                              steps,
+                              ingredients
+                              )
+                              VALUES (
+                              (?),
+                              (?),
+                              (?)
+                              )
+                              """,
+                title,
+                steps,
+                ingredients)
+            }
+            title = ""
+            steps = ""
+            ingredients = ""
         }
     }
 }

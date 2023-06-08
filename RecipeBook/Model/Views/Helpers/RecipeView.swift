@@ -15,8 +15,7 @@ struct RecipeView: View {
     var body: some View {
         
         VStack {
-            List {
-            Text(title)
+                        Text(title)
                 .font(.title)
                 .bold()
             Text("_______________________________")
@@ -26,7 +25,7 @@ struct RecipeView: View {
             Text("_______________________________")
             
             Spacer()
-          }
+          
             
         }
         .padding(15)
