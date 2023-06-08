@@ -21,17 +21,17 @@ struct RecipeListView: View {
                            steps: currentRecipe.steps,
                            ingredients: currentRecipe.ingredients)
             }
-            .navigationTitle("Recipe Book")
+            
         }
-        
+        .navigationTitle("Recipe Book")
     }
 }
 
 struct RecipeListView_Previews: PreviewProvider {
     static var previews: some View {
-        
+        NavigationView{
             RecipeListView()
-            .environment (\.blackbirdDatabase, AppDatabase.instance)
-        
+                .environment (\.blackbirdDatabase, AppDatabase.instance)
+        }
     }
 }

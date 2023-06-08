@@ -11,12 +11,8 @@ struct AddRecipeView: View {
     
     @Environment (\.blackbirdDatabase) var db: Blackbird.Database?
     
-    @BlackbirdLiveModels({ db in
-        try await Recipe.read(from: db)
-    }) var recipes
-    
     @State var title = ""
-    @State var stpes = ""
+    @State var steps = ""
     @State var ingredients = ""
     
     var body: some View {
@@ -27,13 +23,43 @@ struct AddRecipeView: View {
                         TextField("Enter-Title", text: $title)
                     }
                     Section(header: Text("Steps")) {
-                        TextEditor(text: $stpes)
+                        TextEditor(text: $steps)
                     }
                     Section(header: Text("Ingredients")) {
                         TextField("Enter-Ingredients", text: $ingredients)
                     }
                 }
                 
+            }
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button(action: {
+                        Task {
+                            try await db!.transaction { core in
+                                try core.query("""
+                                              INSERT INTO recipe (
+                                              title,
+                                              steps,
+                                              ingredients
+                                              )
+                                              VALUES (
+                                              (?),
+                                              (?),
+                                              (?)
+                                              )
+                                              """,
+                                title,
+                                steps,
+                                ingredients)
+                            }
+                            title = ""
+                            steps = ""
+                            ingredients = ""
+                        }
+                    }, label: {
+                        Text("ADD")
+                    })
+                }
             }
         }
     }
