@@ -16,6 +16,7 @@
 		0FE42B712A314EA0006E8EA0 /* Blackbird in Frameworks */ = {isa = PBXBuildFile; productRef = 0FE42B702A314EA0006E8EA0 /* Blackbird */; };
 		0FE42B732A314EC0006E8EA0 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE42B722A314EC0006E8EA0 /* AppDatabase.swift */; };
 		0FE42B752A314F29006E8EA0 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE42B742A314F29006E8EA0 /* Recipe.swift */; };
+		0FE42B772A3151DF006E8EA0 /* AddRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE42B762A3151DF006E8EA0 /* AddRecipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		0F54BBFF2A30038500804B40 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		0FE42B722A314EC0006E8EA0 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 		0FE42B742A314F29006E8EA0 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		0FE42B762A3151DF006E8EA0 /* AddRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				0FE42B722A314EC0006E8EA0 /* AppDatabase.swift */,
 				0F54BBFF2A30038500804B40 /* RecipeView.swift */,
+				0FE42B762A3151DF006E8EA0 /* AddRecipeView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				0F1819BE2A30EC8100FDC553 /* RecipeView.swift in Sources */,
 				0F54BBF92A30016300804B40 /* RecipeListView.swift in Sources */,
+				0FE42B772A3151DF006E8EA0 /* AddRecipeView.swift in Sources */,
 				0FE42B732A314EC0006E8EA0 /* AppDatabase.swift in Sources */,
 				0F54BBEB2A30011900804B40 /* RecipeBookApp.swift in Sources */,
 				0FE42B752A314F29006E8EA0 /* Recipe.swift in Sources */,
