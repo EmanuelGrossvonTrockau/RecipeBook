@@ -12,7 +12,7 @@ struct RecipeListView: View {
     @BlackbirdLiveModels ({ db in
         try await Recipe.read(from: db)
         }) var recipes
-    
+    @State var addRecipeView = false
     
     var body: some View {
         NavigationView{
@@ -24,6 +24,19 @@ struct RecipeListView: View {
             
         }
         .navigationTitle("Recipe Book")
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                Button(action: {
+                    addRecipeView = true
+                }, label: {
+                    Image(systemName: "plus")
+                })
+                .sheet(isPresented: $addRecipeView) {
+                    AddRecipeView()
+                        .presentationDetents([.fraction(0.6)])
+                }
+            }
+        }
     }
 }
 
