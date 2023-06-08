@@ -14,5 +14,4 @@ struct Recipe: BlackbirdModel {
     @BlackbirdColumn var steps: String
     @BlackbirdColumn var ingredients: String
     
-    
 }

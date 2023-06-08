@@ -17,7 +17,7 @@ struct RecipeView: View {
         VStack {
             
             Text(title)
-                .font(.title3)
+                .font(.title)
                 .bold()
             Text("_______________________________")
             Text(steps)
